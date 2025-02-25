@@ -172,3 +172,9 @@ cython_debug/
 uv.lock
 *.pdf
 *.docx
+
+# dev cycle artifacts
+pdf-math-translate/
+pdf2zh/
+pdf2zh_files/
+out/

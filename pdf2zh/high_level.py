@@ -43,13 +43,14 @@ noto_list = [
     "kn",  # Kannada
     "ml",  # Malayalam
     "mr",  # Marathi
+    "pl",  # Polish
     "ru",  # Russian
     "sr",  # Serbian
     "ta",  # Tamil
     "te",  # Telugu
     "th",  # Thai
-    "ur",  # Urdu
     "uk",  # Ukrainian
+    "ur",  # Urdu
 ]
 
 
@@ -370,6 +371,10 @@ def translate(
         )
         file_mono = Path(output) / f"{filename}-mono.pdf"
         file_dual = Path(output) / f"{filename}-dual.pdf"
+        
+        # Create output directory if it doesn't exist
+        os.makedirs(Path(output), exist_ok=True)
+        
         doc_mono = open(file_mono, "wb")
         doc_dual = open(file_dual, "wb")
         doc_mono.write(s_mono)

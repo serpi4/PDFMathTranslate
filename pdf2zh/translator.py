@@ -245,7 +245,12 @@ class DeepLTranslator(BaseTranslator):
     envs = {
         "DEEPL_AUTH_KEY": None,
     }
-    lang_map = {"zh": "zh-Hans"}
+    lang_map = {
+        "zh": "zh-Hans",
+        "en": "EN-US",  # Default to US English
+        "en-us": "EN-US",
+        "en-gb": "EN-GB"
+    }
 
     def __init__(self, lang_in, lang_out, model, envs=None, **kwargs):
         self.set_envs(envs)
@@ -267,7 +272,12 @@ class DeepLXTranslator(BaseTranslator):
         "DEEPLX_ENDPOINT": "https://api.deepl.com/translate",
         "DEEPLX_ACCESS_TOKEN": None,
     }
-    lang_map = {"zh": "zh-Hans"}
+    lang_map = {
+        "zh": "zh-Hans",
+        "en": "EN-US",  # Default to US English
+        "en-us": "EN-US",
+        "en-gb": "EN-GB"
+    }
 
     def __init__(self, lang_in, lang_out, model, envs=None, **kwargs):
         self.set_envs(envs)
@@ -892,9 +902,11 @@ class QwenMtTranslator(OpenAITranslator):
             "de": "German",
             "ja": "Japanese",
             "ko": "Korean",
+            "pl": "Polish",
             "ru": "Russian",
             "es": "Spanish",
             "it": "Italian",
+            "uk": "Ukrainian",
         }
 
         return langdict[input_lang]
